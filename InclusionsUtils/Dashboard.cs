@@ -8,40 +8,35 @@ namespace InclusionsUtils
     public partial class Dashboard : Form
     {
         
-        private InclusionUtilityManager manager;
+        private readonly InclusionUtilityManager _manager;
 
         public Dashboard(InclusionUtilityManager manager)
         {
             InitializeComponent();
-            this.manager = manager;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            _manager = manager;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             // Radicados general
+            FilingsForm filingsForm = new FilingsForm(_manager);
+            filingsForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // Conversor de partes
-            PartConverterForm converterForm = new PartConverterForm(manager);
+            PartConverterForm converterForm = new PartConverterForm(_manager);
             converterForm.Show();
-            this.Hide();
+            Hide();
         }
 
         private void fixParts_Click(object sender, EventArgs e)
         {
             // Arreglar partes
+            FixPartsForm fixPartsForm = new FixPartsForm(_manager);
+            fixPartsForm.Show();
+            Hide();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)

@@ -38,8 +38,8 @@ namespace InclusionsUtils.Utility
                 defandants.Text = "NO SE PUDO CONVERTIR EL TEXTO CONTACTA CON EL DESARROLLADOR";
             }
 
-            defandants.Text = result["DEMANDADO"].Replace("\n", "");
-            complainants.Text = result["DEMANDANTE"].Replace("\n", "");
+            defandants.Text = result["DEMANDADO"];
+            complainants.Text = result["DEMANDANTE"];
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -47,6 +47,16 @@ namespace InclusionsUtils.Utility
             oldParts.Text = null;
             defandants.Text = null;
             complainants.Text = null;
+        }
+
+        private void copyDefandants_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(defandants.Text);
+        }
+
+        private void copyComplainants_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(complainants.Text);
         }
     }
 }

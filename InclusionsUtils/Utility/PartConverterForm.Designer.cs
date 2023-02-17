@@ -39,6 +39,8 @@
             this.complainants = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.copyComplainants = new System.Windows.Forms.Button();
+            this.copyDefandants = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // oldParts
@@ -110,7 +112,7 @@
             this.partsButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.partsButton.FlatAppearance.BorderSize = 2;
             this.partsButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partsButton.Location = new System.Drawing.Point(290, 358);
+            this.partsButton.Location = new System.Drawing.Point(187, 364);
             this.partsButton.Name = "partsButton";
             this.partsButton.Size = new System.Drawing.Size(199, 32);
             this.partsButton.TabIndex = 9;
@@ -124,7 +126,7 @@
             this.clearButton.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.clearButton.FlatAppearance.BorderSize = 2;
             this.clearButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(290, 396);
+            this.clearButton.Location = new System.Drawing.Point(187, 402);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(199, 32);
             this.clearButton.TabIndex = 10;
@@ -164,11 +166,41 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "DEMANDANTES";
             // 
+            // copyComplainants
+            // 
+            this.copyComplainants.AutoSize = true;
+            this.copyComplainants.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.copyComplainants.FlatAppearance.BorderSize = 2;
+            this.copyComplainants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyComplainants.Location = new System.Drawing.Point(417, 402);
+            this.copyComplainants.Name = "copyComplainants";
+            this.copyComplainants.Size = new System.Drawing.Size(199, 32);
+            this.copyComplainants.TabIndex = 15;
+            this.copyComplainants.Text = "COPIAR DEMAND&ANTES";
+            this.copyComplainants.UseVisualStyleBackColor = true;
+            this.copyComplainants.Click += new System.EventHandler(this.copyComplainants_Click);
+            // 
+            // copyDefandants
+            // 
+            this.copyDefandants.AutoSize = true;
+            this.copyDefandants.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.copyDefandants.FlatAppearance.BorderSize = 2;
+            this.copyDefandants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyDefandants.Location = new System.Drawing.Point(417, 364);
+            this.copyDefandants.Name = "copyDefandants";
+            this.copyDefandants.Size = new System.Drawing.Size(199, 32);
+            this.copyDefandants.TabIndex = 14;
+            this.copyDefandants.Text = "COPIAR DEMANDAD&OS";
+            this.copyDefandants.UseVisualStyleBackColor = true;
+            this.copyDefandants.Click += new System.EventHandler(this.copyDefandants_Click);
+            // 
             // PartConverterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.copyComplainants);
+            this.Controls.Add(this.copyDefandants);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.complainants);
@@ -202,5 +234,7 @@
         private System.Windows.Forms.TextBox complainants;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button copyComplainants;
+        private System.Windows.Forms.Button copyDefandants;
     }
 }

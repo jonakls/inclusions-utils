@@ -13,11 +13,12 @@ namespace InclusionsUtils.Utility
 {
     public partial class PartConverterForm : Form
     {
-        private InclusionUtilityManager manager;
+        private readonly InclusionUtilityManager _manager;
+        
         public PartConverterForm(InclusionUtilityManager manager)
         {
             InitializeComponent();
-            this.manager = manager;
+            _manager = manager;
         }
 
         private void PartConverterForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -26,13 +27,13 @@ namespace InclusionsUtils.Utility
 
         private void PartConverterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Dashboard dashboard = new Dashboard(manager);
+            Dashboard dashboard = new Dashboard(_manager);
             dashboard.Show();
         }
 
         private void partsButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> result = manager.ConvertParts(oldParts.Text);
+            Dictionary<string, string> result = _manager.ConvertParts(oldParts.Text);
             if (result == null)
             {
                 defandants.Text = "NO SE PUDO CONVERTIR EL TEXTO CONTACTA CON EL DESARROLLADOR";

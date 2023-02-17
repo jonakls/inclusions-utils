@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartConverterForm));
             this.oldParts = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,7 +81,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(87, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(206, 16);
+            this.label3.Size = new System.Drawing.Size(207, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "PARTES DESDE RAMA JUDICIAL";
             // 
@@ -90,12 +91,13 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(509, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 16);
+            this.label4.Size = new System.Drawing.Size(192, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "TEXTO PARA ASIGNAR A LITI";
             // 
             // defandants
             // 
+            this.defandants.BackColor = System.Drawing.SystemColors.ControlDark;
             this.defandants.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.defandants.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.defandants.Location = new System.Drawing.Point(448, 114);
@@ -136,6 +138,7 @@
             // 
             // complainants
             // 
+            this.complainants.BackColor = System.Drawing.SystemColors.ControlDark;
             this.complainants.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.complainants.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.complainants.Location = new System.Drawing.Point(448, 254);
@@ -152,7 +155,7 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(445, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 16);
+            this.label5.Size = new System.Drawing.Size(98, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "DEMANDADOS";
             // 
@@ -162,7 +165,7 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(445, 235);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 16);
+            this.label6.Size = new System.Drawing.Size(102, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "DEMANDANTES";
             // 
@@ -212,13 +215,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.oldParts);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PartConverterForm";
-            this.Text = "Convertir Partes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CONVERTIR PARTES";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PartConverterForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PartConverterForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

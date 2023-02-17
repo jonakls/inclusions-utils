@@ -21,6 +21,7 @@ namespace InclusionsUtils
             // Radicados general
             FilingsForm filingsForm = new FilingsForm(_manager);
             filingsForm.Show();
+            Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

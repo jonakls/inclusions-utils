@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace InclusionsUtils.Utility
+namespace InclusionsUtils.Form
 {
     partial class FixPartsForm
     {
@@ -83,6 +83,7 @@ namespace InclusionsUtils.Utility
             this.copyResultButton.TabIndex = 18;
             this.copyResultButton.Text = "COPIAR RESULTADO";
             this.copyResultButton.UseVisualStyleBackColor = true;
+            this.copyResultButton.Click += new System.EventHandler(this.copyResultButton_Click);
             // 
             // clearButton
             // 
@@ -109,6 +110,7 @@ namespace InclusionsUtils.Utility
             this.fixPartsButton.TabIndex = 16;
             this.fixPartsButton.Text = "&ARREGLAR PARTES";
             this.fixPartsButton.UseVisualStyleBackColor = true;
+            this.fixPartsButton.Click += new System.EventHandler(this.fixPartsButton_Click);
             // 
             // label3
             // 

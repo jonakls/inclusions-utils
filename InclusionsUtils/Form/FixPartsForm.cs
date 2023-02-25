@@ -1,9 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using InclusionsUtils.Manager;
 
-namespace InclusionsUtils.Utility
+namespace InclusionsUtils.Form
 {
-    public partial class FixPartsForm : Form
+    public partial class FixPartsForm : System.Windows.Forms.Form
     {
 
         private readonly InclusionUtilityManager _manager;
@@ -18,6 +19,16 @@ namespace InclusionsUtils.Utility
         {
             Dashboard dashboard = new Dashboard(_manager);
             dashboard.Show();
+        }
+
+        private void fixPartsButton_Click(object sender, EventArgs e)
+        {
+            resultParts.Text = _manager.ConvertText(damageParts.Text);
+        }
+
+        private void copyResultButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(resultParts.Text);
         }
     }
 }

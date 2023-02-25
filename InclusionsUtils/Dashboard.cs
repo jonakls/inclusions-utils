@@ -1,11 +1,11 @@
 ﻿using InclusionsUtils.Manager;
-using InclusionsUtils.Utility;
 using System;
 using System.Windows.Forms;
+using InclusionsUtils.Form;
 
 namespace InclusionsUtils
 {
-    public partial class Dashboard : Form
+    public partial class Dashboard : System.Windows.Forms.Form
     {
         
         private readonly InclusionUtilityManager _manager;

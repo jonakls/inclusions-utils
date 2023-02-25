@@ -1,9 +1,9 @@
 ﻿using System.Windows.Forms;
 using InclusionsUtils.Manager;
 
-namespace InclusionsUtils.Utility
+namespace InclusionsUtils.Form
 {
-    public partial class FilingsForm : Form
+    public partial class FilingsForm : System.Windows.Forms.Form
     {
         private readonly InclusionUtilityManager _manager;
         

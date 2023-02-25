@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace InclusionsUtils.Utility
+namespace InclusionsUtils.Form
 {
     partial class FilingsForm
     {

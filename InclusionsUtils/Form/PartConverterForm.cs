@@ -1,17 +1,11 @@
-﻿using InclusionsUtils.Manager;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InclusionsUtils.Manager;
 
-namespace InclusionsUtils.Utility
+namespace InclusionsUtils.Form
 {
-    public partial class PartConverterForm : Form
+    public partial class PartConverterForm : System.Windows.Forms.Form
     {
         private readonly InclusionUtilityManager _manager;
         

@@ -27,10 +27,12 @@ namespace InclusionsUtils.Form
 
         private void partsButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> result = _manager.ConvertParts(oldParts.Text);
+            Dictionary<string, string> result = _manager.ConvertParts(oldParts.Text, pagesList.Text);
             if (result == null)
             {
-                defandants.Text = "NO SE PUDO CONVERTIR EL TEXTO CONTACTA CON EL DESARROLLADOR";
+                defandants.Text = @"NO SE PUDO CONVERTIR EL TEXTO CONTACTA CON EL DESARROLLADOR";
+                complainants.Text = @"NO SE PUDO CONVERTIR EL TEXTO CONTACTA CON EL DESARROLLADOR";
+                return;
             }
 
             defandants.Text = result["DEMANDADO"];

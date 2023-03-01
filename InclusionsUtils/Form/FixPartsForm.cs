@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using InclusionsUtils.Manager;
+using InclusionsUtils.Utils;
 
 namespace InclusionsUtils.Form
 {
@@ -23,7 +24,7 @@ namespace InclusionsUtils.Form
 
         private void fixPartsButton_Click(object sender, EventArgs e)
         {
-            resultParts.Text = _manager.ConvertText(damageParts.Text);
+            resultParts.Text = TextUtils.ConvertText(damageParts.Text);
         }
 
         private void copyResultButton_Click(object sender, EventArgs e)

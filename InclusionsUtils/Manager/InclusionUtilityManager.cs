@@ -1,54 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using InclusionsUtils.Utils;
+
 namespace InclusionsUtils.Manager
 {
     public class InclusionUtilityManager
     {
-        public Dictionary<string, string> ConvertParts(String parts)
+        public Dictionary<string, string> ConvertParts(String parts, String option)
         {
-            Dictionary<string, string> cachedParts = new Dictionary<string, string>();
-            List<String> defendants = new List<String>();
-            List<String> complainants = new List<String>();
-
-            String[] partsArray = parts.Replace("\r", "").Split('\n');
-            foreach (String part in partsArray)
+            switch (option.ToLower())
             {
-                String[] realPart = part.Split('	');
-                if (realPart.Length != 2)
-                    continue;
-                
-                if (realPart[0].ToLower().Contains("demandado"))
-                {
-                    defendants.Add(realPart[1]
-                        .Replace(".", "")
-                        .ToUpper()
-                    );
-                }
-                
-                if (realPart[0].ToLower().Contains("demandante"))
-                {
-                    complainants.Add(realPart[1]
-                        .Replace(".", "")
-                        .ToUpper()
-                    );
-                }
+                case "rama judicial":
+                    return ConvertPartsManager.FromJudicialBranch(parts);
+                case "samai":
+                    return ConvertPartsManager.FromSamai(parts);
+                case "siglo xxi":
+                    return ConvertPartsManager.FromCentury(parts);
+                case "tyba":
+                    return ConvertPartsManager.FromTyba(parts);
+                default:
+                    return ConvertPartsManager.FromJudicialBranch(parts);
             }
-            
-            cachedParts["DEMANDADO"] = ConvertText(string.Join(" | ", defendants));
-            cachedParts["DEMANDANTE"] = ConvertText(string.Join(" | ", complainants));
-
-            return cachedParts;
-        }
-        
-        public String ConvertText(String text)
-        {
-            String convertedText = text;
-            foreach (KeyValuePair<string, string> accent in Utils.TextUtils.Accents)
-            {
-                convertedText = convertedText.Replace(accent.Key, accent.Value);
-            }
-
-            return convertedText;
         }
     }
 }

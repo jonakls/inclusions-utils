@@ -413,5 +413,51 @@ namespace InclusionsUtils.Utils
             { "Z̧", "Z" },
             { "z̧", "z" }
         };
+
+        public static readonly Dictionary<String, String> Characters = new Dictionary<string, string>()
+        {
+            {"-", ""},
+            { " - ", " | "},
+            { " -", " | "},
+            { "- ", " | "},
+            { "–", " | "},
+            { "—", " | "},
+            { ".", "" },
+            { "\r", "" },
+            { "\t", "" }
+        };
+
+        public static readonly Dictionary<string, string> ResolvesChars = new Dictionary<string, string>()
+        {
+            { "	", " " },
+            { "\r", " " }
+        };
+
+        public static String ConvertText(String text)
+        {
+            String convertedText = text;
+            foreach (KeyValuePair<string, string> accent in Accents)
+            {
+                convertedText = convertedText.Replace(accent.Key, accent.Value);
+            }
+
+            foreach (KeyValuePair<string, string> singleChar in Characters)
+            {
+                convertedText = convertedText.Replace(singleChar.Key, singleChar.Value);
+            }
+
+            return convertedText;
+        }
+
+        public static String ResolveText(String text)
+        {
+            String resolvedText = text;
+            foreach (KeyValuePair<string, string> singleChar in ResolvesChars)
+            {
+                resolvedText = resolvedText.Replace(singleChar.Key, singleChar.Value);
+            }
+
+            return resolvedText.ToUpper();
+        }
     }
 }
